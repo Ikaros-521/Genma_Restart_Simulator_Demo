@@ -1,0 +1,131 @@
+body {
+    background-color: rgb(20, 23, 29);
+    color: white;
+}
+
+ul {
+    list-style:none;
+}
+
+/* 首页 */
+#home_page_div {
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+/* 属性页 */
+#prop_page_div {
+    width: auto;
+    height: auto; 
+}
+
+#prop_page_div #restart_game {
+    float: right;
+}
+
+#prop_page_div #init_prop {
+    text-align: center;
+}
+
+#prop_page_div #init_prop #prop_set_div {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.prop_name_class {
+    width: 200px;
+    line-height: 20px;
+    margin-right: 50px;
+}
+
+#start_new_life {
+    font-size: 30px; 
+    /* border: 2px solid #c8c8c8; */
+    width: 300px;
+    margin-left: 30%;
+}
+
+/* 游戏页 */
+#game_page_div {
+    width: auto;
+    height: auto; 
+}
+
+#prop_show_ul{
+    list-style: none;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    color: #FFFFFF;
+    overflow: auto;
+    text-align: center;
+}
+
+#prop_show_ul li{
+    flex: 1;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 1px #ccc solid;
+    border-radius: 0.2rem;
+    font-size: 20px;
+}
+
+#prop_show_ul .real_prop_class {
+    background: #eee;
+    color: #666;
+}
+
+#game_page_div #event_show_div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#game_page_div #event_show_div #event_show_ul{
+    flex: 1;
+    margin: 0.5rem 1rem;
+    padding: 0;
+    border: 1px #9b9b9b solid;
+    background-color: #393E46;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+#game_page_div #event_show_div #event_show_ul li{
+    margin: 10px 0;
+    padding: 5px 10px;
+    display: flex;
+    background-color: #4a5361;
+    box-shadow: #EEEEEE 0 0 0.4rem;
+    color: #EEEEEE;
+    font-size: 1rem;
+    position: relative;
+}
+
+#auto_btn_div {
+    margin: 20px 100px 20px 100px;
+}
+
+#auto_btn_div #auto_btn {
+    width: 200px;
+    font-size: 30px;
+    margin: 0 50px;
+}
+
+#auto_btn_div #auto_btn2 {
+    width: 200px;
+    font-size: 30px;
+}
+
+#header {
+    height: 100px;
+}
+
+#footer {
+    height: 100px;
+}

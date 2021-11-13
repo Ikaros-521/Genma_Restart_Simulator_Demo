@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>原魔重开模拟器</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/data.js"></script>
+	<script src="js/index.js"></script>
+    <link type="text/css" href="css/index.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+
+    </div>
+    <div id="home_page_div">
+        <div style="margin-top: 40%;">
+            <div id="start_game" onclick="start_game_click()">
+                开始游戏
+            </div>
+            <div id="game_explain">
+                游戏说明
+            </div>
+        </div>
+    </div>
+    <div id="prop_page_div">
+        <div id="restart_game" onclick="restart_game_click()">
+            重新开始
+        </div>
+        <div id="init_prop">
+            <h2>调整初始属性</h2>
+            <span style="font-size: 20px;">可用属性点：</span>
+            <span id="total_prop" style="font-size: 20px;">10</span>
+            <div id="prop_set_div">
+                <ul>
+                    <li>
+                        <span class="prop_name_class">体质</span>
+                        <span onclick="set_prop('-', '体质')" readonly="readonly">-</span>
+                        <span class="prop_class">0</span>
+                        <span onclick="set_prop('+', '体质')" readonly="readonly">+</span>
+                    </li>
+                    <li>
+                        <span class="prop_name_class">幸运</span>
+                        <span onclick="set_prop('-', '幸运')" readonly="readonly">-</span>
+                        <span class="prop_class">0</span>
+                        <span onclick="set_prop('+', '幸运')" readonly="readonly">+</span>
+                    </li>
+                    <li>
+                        <span class="prop_name_class">智慧</span>
+                        <span onclick="set_prop('-', '智慧')" readonly="readonly">-</span>
+                        <span class="prop_class">0</span>
+                        <span onclick="set_prop('+', '智慧')" readonly="readonly">+</span>
+                    </li>
+                </ul>
+            </div>
+            <button id="start_new_life" onclick="start_new_life_click()">
+                开始新的人生
+            </button>
+        </div>
+    </div>
+    <div id="game_page_div">
+        <div id="prop_show_div">
+            <ul id="prop_show_ul">
+                <li>
+                    <span>体质</span>
+                    <span class="real_prop_class">0</span>
+                </li>
+                <li>
+                    <span>幸运</span>
+                    <span class="real_prop_class">0</span>
+                </li>
+                <li>
+                    <span>智慧</span>
+                    <span class="real_prop_class">0</span>
+                </li>
+            </ul>
+        </div>
+        <div id="event_show_div" onclick="load_one_event()">
+            <ul id="event_show_ul">
+
+            </ul>
+        </div>
+        <div id="auto_btn_div">
+            <button id="auto_btn" onclick="auto_play('1')">自动播放</button>
+            <button id="auto_btn2" onclick="auto_play('2')">播放2x</button>
+        </div>
+    </div>
+    <div id="footer">
+
+    </div>
+</body>
+</html>
