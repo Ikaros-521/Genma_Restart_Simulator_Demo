@@ -5,8 +5,6 @@
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<script src="js/bootstrap.min.js"></script>
     <script src="js/data.js"></script>
 	<script src="js/index.js"></script>
     <link type="text/css" href="css/index.css" rel="stylesheet">
@@ -20,8 +18,17 @@
             <div id="start_game" onclick="start_game_click()">
                 开始游戏
             </div>
-            <div id="game_explain">
+            <div id="game_explain" onclick="show_hide_game_explain_content('show')">
                 游戏说明
+            </div>
+            <div id="game_explain_content">
+                <span style="float: right; cursor: pointer;" onclick="show_hide_game_explain_content('hide')">X</span>
+                <br>
+                <span>本游戏参考《人生重开模拟器》，仿照着简单搓了个原魔重开模拟器。</span>
+                <br><br>
+                <span>玩法类似，通过初始属性加点，影响原魔的成长。目前设定只有3个属性，10个属性点。加点完成后开始游戏，便可以通过点击“事件框”或者点击“自动播放”按钮来进行事件触发。</span>
+                <br><br>
+                <span>游戏目前最大年限为100年，最终是否能进化为魔神，横扫提瓦特大陆，就看你的造化了~</span>
             </div>
         </div>
     </div>
@@ -37,21 +44,21 @@
                 <ul>
                     <li>
                         <span class="prop_name_class">体质</span>
-                        <span onclick="set_prop('-', '体质')" readonly="readonly">-</span>
+                        <span onclick="set_prop('-', '体质')" readonly="readonly" style="cursor: pointer;">-</span>
                         <span class="prop_class">0</span>
-                        <span onclick="set_prop('+', '体质')" readonly="readonly">+</span>
+                        <span onclick="set_prop('+', '体质')" readonly="readonly" style="cursor: pointer;">+</span>
                     </li>
                     <li>
                         <span class="prop_name_class">幸运</span>
-                        <span onclick="set_prop('-', '幸运')" readonly="readonly">-</span>
+                        <span onclick="set_prop('-', '幸运')" readonly="readonly" style="cursor: pointer;">-</span>
                         <span class="prop_class">0</span>
-                        <span onclick="set_prop('+', '幸运')" readonly="readonly">+</span>
+                        <span onclick="set_prop('+', '幸运')" readonly="readonly" style="cursor: pointer;">+</span>
                     </li>
                     <li>
                         <span class="prop_name_class">智慧</span>
-                        <span onclick="set_prop('-', '智慧')" readonly="readonly">-</span>
+                        <span onclick="set_prop('-', '智慧')" readonly="readonly" style="cursor: pointer;">-</span>
                         <span class="prop_class">0</span>
-                        <span onclick="set_prop('+', '智慧')" readonly="readonly">+</span>
+                        <span onclick="set_prop('+', '智慧')" readonly="readonly" style="cursor: pointer;">+</span>
                     </li>
                 </ul>
             </div>
@@ -86,6 +93,16 @@
             <button id="auto_btn" onclick="auto_play('1')">自动播放</button>
             <button id="auto_btn2" onclick="auto_play('2')">播放2x</button>
         </div>
+    </div>
+    <div id="zhezhao_div">
+
+    </div>
+    <div id="regame_page_div">
+        <span style="font-size: 30px; position: absolute; top: 5%; left: 170px;">魔生总结</span>
+        <span id="summary">
+
+        </span>
+        <button id="restart_game2" onclick="restart_game_click()">重新开始</button>
     </div>
     <div id="footer">
 
