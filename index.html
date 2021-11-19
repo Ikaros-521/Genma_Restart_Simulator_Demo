@@ -1,26 +1,24 @@
 <html>
+
 <head>
     <title>原魔重开模拟器</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script src="js/jquery-3.6.0.min.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
-	<link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
     <script src="js/data.js"></script>
-	<script src="js/index.js"></script>
+    <script src="js/index.js"></script>
     <link type="text/css" href="css/index.css" rel="stylesheet">
 </head>
+
 <body>
     <div id="header">
 
     </div>
     <div id="home_page_div">
         <div style="margin-top: 40%;">
-            <div id="start_game" onclick="start_game_click()">
-                开始游戏
-            </div>
-            <div id="game_explain" onclick="show_hide_game_explain_content('show')">
-                游戏说明
-            </div>
+            <button id="start_game" onclick="start_game_click()">开始游戏</button>
+            <button id="game_explain" onclick="show_hide_game_explain_content('show')">游戏说明</button>
             <div id="game_explain_content">
                 <span style="float: right; cursor: pointer;" onclick="show_hide_game_explain_content('hide')">X</span>
                 <br>
@@ -108,4 +106,5 @@
 
     </div>
 </body>
+
 </html>

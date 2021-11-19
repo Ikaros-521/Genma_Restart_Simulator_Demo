@@ -9,6 +9,8 @@ var init_prop3 = 0;
 var real_prop1 = 0;
 var real_prop2 = 0;
 var real_prop3 = 0;
+// 事件记录集合
+var event_id_set = new Set();
 
 // 页面加载完毕
 $(document).ready(function(){
@@ -154,20 +156,39 @@ function load_one_event() {
     // console.log(get_random_num_by_range(1, ages[age].event.length));
 
     var event_id = ages[age].event[(get_random_num_by_range(1, ages[age].event.length) - 1)];
+    console.log("event_id:" + event_id);
     li_content = li_content + events[event_id].event + '</li>';
+
+    // 插入事件到集合内
+    event_id_set.add(event_id);
 
     $('#event_show_ul').append(li_content);
     // 保持滚动条一直处于底部
     document.getElementById('event_show_ul').scrollTop = document.getElementById('event_show_ul').scrollHeight;
     age++;
 
-    if(event_id == "10000" || event_id == "10001") {
-        die_and_regame();
+    if(event_id == "99999") {
+        over_and_regame();
+        return;
     }
+
+    // 死亡事件处理
+    for(var i = 0; i < die_event.length; i++)
+    {
+        if(event_id == die_event[i]) {
+            over_and_regame();
+        }
+    }
+    
 }
 
-// 死亡触发 重新开始弹窗
-function die_and_regame() {
+// 结束触发 重新开始弹窗
+function over_and_regame() {
+    // 关闭定时器
+    clearInterval(auto_interval);
+    $('#auto_btn').html("自动播放");
+    $('#auto_btn2').html("播放2x");
+
     $("#zhezhao_div").show();
     $("#regame_page_div").show();
 
