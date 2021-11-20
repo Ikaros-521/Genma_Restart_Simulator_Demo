@@ -16,13 +16,13 @@
 
     </div>
     <div id="home_page_div">
-        <div style="margin-top: 10%;font-size: 60px;">
+        <div style="margin-top: 10%;font-size: 50px;">
             原魔重开模拟器
         </div>
         <div style="font-size: 30px;">
             干翻原神，原魔永存~
         </div>
-        <div style="margin-top: 10%;">
+        <div id="home_page_btn_div">
             <button id="start_game" onclick="start_game_click()">开始游戏</button>
             <button id="game_explain" onclick="show_hide_game_explain_content('show')">游戏说明</button>
             <div id="game_explain_content">
@@ -41,28 +41,29 @@
             重新开始
         </div>
         <div id="init_prop">
-            <h2>调整初始属性</h2>
+            <span style="font-size: 40px;">调整初始属性</span>
+            <br>
             <span style="font-size: 20px;">可用属性点：</span>
             <span id="total_prop" style="font-size: 20px;">10</span>
             <div id="prop_set_div">
                 <ul>
                     <li>
                         <span class="prop_name_class">体质</span>
-                        <span onclick="set_prop('-', '体质')" readonly="readonly" style="cursor: pointer;">-</span>
+                        <span class="add_del_prop" onclick="set_prop('-', '体质')" readonly="readonly" style="cursor: pointer;">-</span>
                         <span class="prop_class">0</span>
-                        <span onclick="set_prop('+', '体质')" readonly="readonly" style="cursor: pointer;">+</span>
+                        <span class="add_del_prop" onclick="set_prop('+', '体质')" readonly="readonly" style="cursor: pointer;">+</span>
                     </li>
                     <li>
                         <span class="prop_name_class">幸运</span>
-                        <span onclick="set_prop('-', '幸运')" readonly="readonly" style="cursor: pointer;">-</span>
+                        <span class="add_del_prop" onclick="set_prop('-', '幸运')" readonly="readonly" style="cursor: pointer;">-</span>
                         <span class="prop_class">0</span>
-                        <span onclick="set_prop('+', '幸运')" readonly="readonly" style="cursor: pointer;">+</span>
+                        <span class="add_del_prop" onclick="set_prop('+', '幸运')" readonly="readonly" style="cursor: pointer;">+</span>
                     </li>
                     <li>
                         <span class="prop_name_class">智慧</span>
-                        <span onclick="set_prop('-', '智慧')" readonly="readonly" style="cursor: pointer;">-</span>
+                        <span class="add_del_prop" onclick="set_prop('-', '智慧')" readonly="readonly" style="cursor: pointer;">-</span>
                         <span class="prop_class">0</span>
-                        <span onclick="set_prop('+', '智慧')" readonly="readonly" style="cursor: pointer;">+</span>
+                        <span class="add_del_prop" onclick="set_prop('+', '智慧')" readonly="readonly" style="cursor: pointer;">+</span>
                     </li>
                 </ul>
             </div>
