@@ -271,6 +271,13 @@ ul {
     color: black;
 }
 
+#regame_page_div #summary_title {
+    font-size: 30px; 
+    position: absolute; 
+    top: 5%; 
+    left: 170px;
+}
+
 #regame_page_div #summary {
     position: absolute;
     top: 100px;
@@ -279,11 +286,18 @@ ul {
 }
 
 #regame_page_div #restart_game2 {
-    font-size: 25px;
     position: absolute;
     bottom: 10%;
     left: 150px;
     width: 200px;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 #zhezhao_div {

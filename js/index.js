@@ -228,7 +228,7 @@ function load_one_event() {
     var event_id, the_unit;
     while(1) {
         event_id = ages[age].event[(get_random_num_by_range(1, ages[age].event.length) - 1)];
-        console.log("event_id:" + event_id);
+        // console.log("event_id:" + event_id);
         the_unit = parseInt(event_id) % 10;
         if(main_element == the_unit || the_unit == 7 || the_unit == 8 || the_unit == 9)
             break;
