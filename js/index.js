@@ -228,9 +228,9 @@ function load_one_event() {
     var event_id, the_unit;
     while(1) {
         event_id = ages[age].event[(get_random_num_by_range(1, ages[age].event.length) - 1)];
-        // console.log("event_id:" + event_id);
+        console.log("event_id:" + event_id);
         the_unit = parseInt(event_id) % 10;
-        if(main_element == the_unit || main_element == 7 || main_element == 8 || main_element == 9)
+        if(main_element == the_unit || the_unit == 7 || the_unit == 8 || the_unit == 9)
             break;
     }
     
@@ -268,11 +268,57 @@ function load_one_event() {
         else if(main_element == 5) $("#header_img").attr("src", "./img/冰史莱姆.png");
         else if(main_element == 6) $("#header_img").attr("src", "./img/岩史莱姆.png");
         else {}
+    } else if(age == 20) {
+        if(main_element == 0) $("#header_img").attr("src", "./img/大型火史莱姆.png");
+        else if(main_element == 1) $("#header_img").attr("src", "./img/大型水史莱姆.png");
+        else if(main_element == 2) $("#header_img").attr("src", "./img/大型风史莱姆.png");
+        else if(main_element == 3) $("#header_img").attr("src", "./img/大型雷史莱姆.png");
+        else if(main_element == 4) $("#header_img").attr("src", "./img/大型草史莱姆.png");
+        else if(main_element == 5) $("#header_img").attr("src", "./img/大型冰史莱姆.png");
+        else if(main_element == 6) $("#header_img").attr("src", "./img/大型岩史莱姆.png");
+        else {}
+    } else if(age == 40) {
+        if(main_element == 0) $("#header_img").attr("src", "./img/水飘浮灵.png");
+        else if(main_element == 1) $("#header_img").attr("src", "./img/水飘浮灵.png");
+        else if(main_element == 2) $("#header_img").attr("src", "./img/风飘浮灵.png");
+        else if(main_element == 3) $("#header_img").attr("src", "./img/风飘浮灵.png");
+        else if(main_element == 4) $("#header_img").attr("src", "./img/风飘浮灵.png");
+        else if(main_element == 5) $("#header_img").attr("src", "./img/岩飘浮灵.png");
+        else if(main_element == 6) $("#header_img").attr("src", "./img/岩飘浮灵.png");
+        else {}
+    } else if(age == 50) {
+        if(main_element == 0) $("#header_img").attr("src", "./img/狂风之核.png");
+        else if(main_element == 1) $("#header_img").attr("src", "./img/狂风之核.png");
+        else if(main_element == 2) $("#header_img").attr("src", "./img/狂风之核.png");
+        else if(main_element == 3) $("#header_img").attr("src", "./img/狂风之核.png");
+        else if(main_element == 4) $("#header_img").attr("src", "./img/狂风之核.png");
+        else if(main_element == 5) $("#header_img").attr("src", "./img/狂风之核.png");
+        else if(main_element == 6) $("#header_img").attr("src", "./img/狂风之核.png");
+        else {}
+    } else if(age == 60) {
+        if(main_element == 0) $("#header_img").attr("src", "./img/无相之火.png");
+        else if(main_element == 1) $("#header_img").attr("src", "./img/无相之水.png");
+        else if(main_element == 2) $("#header_img").attr("src", "./img/无相之风.png");
+        else if(main_element == 3) $("#header_img").attr("src", "./img/无相之雷.png");
+        else if(main_element == 4) $("#header_img").attr("src", "./img/无相之火.png");
+        else if(main_element == 5) $("#header_img").attr("src", "./img/无相之冰.png");
+        else if(main_element == 6) $("#header_img").attr("src", "./img/无相之岩.png");
+        else {}
+    } else if(age == 70) {
+        if(main_element == 0) $("#header_img").attr("src", "./img/纯水精灵.png");
+        else if(main_element == 1) $("#header_img").attr("src", "./img/纯水精灵.png");
+        else if(main_element == 2) $("#header_img").attr("src", "./img/纯水精灵.png");
+        else if(main_element == 3) $("#header_img").attr("src", "./img/雷音权现.png");
+        else if(main_element == 4) $("#header_img").attr("src", "./img/雷音权现.png");
+        else if(main_element == 5) $("#header_img").attr("src", "./img/雷音权现.png");
+        else if(main_element == 6) $("#header_img").attr("src", "./img/雷音权现.png");
+        else {}
     } else if(age == 100) {
         if(event_id == "999999") {
             $('#event_show_ul').append(li_content);
             // 保持滚动条一直处于底部
             document.getElementById('event_show_ul').scrollTop = document.getElementById('event_show_ul').scrollHeight;
+            $("#header_img").attr("src", "./img/魔神.png");
 
             over_and_regame();
             return;
