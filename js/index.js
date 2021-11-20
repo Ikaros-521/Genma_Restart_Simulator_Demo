@@ -23,7 +23,6 @@ $(document).ready(function(){
     // $("#home_page_div").hide();
     // 调用判断当前访问页面是手机端还是移动端
     browserRedirect();
-    alert(navigator.userAgent.toLowerCase());
 })
 
 // 浏览器css检测匹配
@@ -37,7 +36,7 @@ function browserRedirect() {
 	var bIsAndroid = sUserAgent.match(/android/i) == "android";
 	var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
 	var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-    var bIsMQQ =  sUserAgent.match(/MQQbrowser/i) == "MQQbrowser";
+    var bIsMQQ =  sUserAgent.match(/mqqbrowser/i) == "mqqbrowser";
     var bIsWeChat =  sUserAgent.match(/MicroMessenger/i)=="micromessenger";
 
 	if (!(bIsMQQ || bIsWeChat || bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
