@@ -15,6 +15,15 @@ ul {
     font-size: 30px;
 }
 
+#home_page_div #home_page_title {
+    margin-top: 10%;
+    font-size: 50px;
+}
+
+#home_page_div #home_page_subtitle {
+    font-size: 30px;
+}
+
 #home_page_div #home_page_btn_div {
     margin-top: 50%;
 }

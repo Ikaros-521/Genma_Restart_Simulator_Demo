@@ -36,7 +36,10 @@ function browserRedirect() {
 	var bIsAndroid = sUserAgent.match(/android/i) == "android";
 	var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
 	var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-	if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+    var bIsQQ =  sUserAgent.match(/QQ/i) == "qq";
+    var bIsWeChat =  sUserAgent.match(/MicroMessenger/i)=="micromessenger";
+
+	if (!(bIsQQ || bIsWeChat || bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
 		//电脑端
 		//加载css
 		var linkNode = document.createElement("link");
@@ -59,7 +62,8 @@ function browserRedirect() {
 		var linkNode = document.createElement("link");
 		linkNode.setAttribute("rel","stylesheet");
 		linkNode.setAttribute("type","text/css");
-		linkNode.setAttribute("href","css/index_phone.css");
+        linkNode.setAttribute("href","css/index.css");
+		//linkNode.setAttribute("href","css/index_phone.css");
 		document.head.appendChild(linkNode);
 	}
 }
