@@ -62,7 +62,7 @@ function browserRedirect() {
 		var linkNode = document.createElement("link");
 		linkNode.setAttribute("rel","stylesheet");
 		linkNode.setAttribute("type","text/css");
-        linkNode.setAttribute("href","css/index.css");
+        linkNode.setAttribute("href","css/index_phone.css");
 		//linkNode.setAttribute("href","css/index_phone.css");
 		document.head.appendChild(linkNode);
 	}
