@@ -36,10 +36,10 @@ function browserRedirect() {
 	var bIsAndroid = sUserAgent.match(/android/i) == "android";
 	var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
 	var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-    var bIsQQ =  sUserAgent.match(/QQ/i) == "qq";
+    var bIsMQQ =  sUserAgent.match(/MQQbrowser/i) == "MQQbrowser";
     var bIsWeChat =  sUserAgent.match(/MicroMessenger/i)=="micromessenger";
 
-	if (!(bIsQQ || bIsWeChat || bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+	if (!(bIsMQQ || bIsWeChat || bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
 		//电脑端
 		//加载css
 		var linkNode = document.createElement("link");
