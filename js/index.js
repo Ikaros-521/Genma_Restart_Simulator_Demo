@@ -11,6 +11,10 @@ var real_prop2 = 0;
 var real_prop3 = 0;
 // 事件记录集合
 var event_id_set = new Set();
+// 种族绑定
+var race = "";
+// 出生的国家
+var birth_country = "";
 
 // 页面加载完毕
 $(document).ready(function(){
@@ -45,6 +49,17 @@ function restart_game_click() {
     $("#regame_page_div").hide();
 }
 
+// 随机加点
+function random_set_prop_click() {
+    var num1 = get_random_num_by_range(0, 11);
+    document.getElementsByClassName("prop_class")[0].innerText = num1;
+    var num2 = get_random_num_by_range(0, (11 - num1));
+    document.getElementsByClassName("prop_class")[1].innerText = num2;
+    document.getElementsByClassName("prop_class")[2].innerText = 10 - num2 - num1;
+    total_prop = 0;
+    $("#total_prop").text("0");
+}
+
 // 设置属性
 function set_prop(type, prop) {
     var prop1 = document.getElementsByClassName("prop_class")[0].innerText;
@@ -54,15 +69,23 @@ function set_prop(type, prop) {
 
     if(type == '-') {
         if(prop == '体质') {
+            if(parseInt(prop1) > 0) {
+                total_prop = (total_prop + 1) > 10 ? 10 : (total_prop + 1);
+            }
             document.getElementsByClassName("prop_class")[0].innerText = (parseInt(prop1) - 1) >= 0 ? (parseInt(prop1) - 1) : 0;  
         } else if(prop == '幸运') {
+            if(parseInt(prop2) > 0) {
+                total_prop = (total_prop + 1) > 10 ? 10 : (total_prop + 1);
+            }
             document.getElementsByClassName("prop_class")[1].innerText = (parseInt(prop2) - 1) >= 0 ? (parseInt(prop2) - 1) : 0;
         } else if(prop == '智慧') {
+            if(parseInt(prop3) > 0) {
+                total_prop = (total_prop + 1) > 10 ? 10 : (total_prop + 1);
+            }
             document.getElementsByClassName("prop_class")[2].innerText = (parseInt(prop3) - 1) >= 0 ? (parseInt(prop3) - 1) : 0;
         } else {
             alert("???");
         }
-        total_prop = (total_prop + 1) > 10 ? 10 : (total_prop + 1);
     } else if(type == '+') {
         if(total_prop <= 0) return;
 
@@ -118,7 +141,7 @@ function auto_play(type) {
         // console.log(btn_type);
         if(btn_type == "自动播放") {
             $('#auto_btn').html("停止播放");
-            $('#auto_btn2').html("播放2x");
+            $('#auto_btn2').html("播放   2x");
 
             clearInterval(auto_interval);
             auto_interval = window.setInterval(load_one_event, 1000);
@@ -128,14 +151,14 @@ function auto_play(type) {
             clearInterval(auto_interval);
         }
     } else {
-        if(btn_type2 == "播放2x") {
+        if(btn_type2 == "播放   2x") {
             $('#auto_btn').html("自动播放");
             $('#auto_btn2').html("停止播放");
 
             clearInterval(auto_interval);
             auto_interval = window.setInterval(load_one_event, 500);
         } else {
-            $('#auto_btn2').html("播放2x");
+            $('#auto_btn2').html("播放   2x");
 
             clearInterval(auto_interval);
         }
@@ -156,30 +179,46 @@ function load_one_event() {
     // console.log(get_random_num_by_range(1, ages[age].event.length));
 
     var event_id = ages[age].event[(get_random_num_by_range(1, ages[age].event.length) - 1)];
-    console.log("event_id:" + event_id);
+    // console.log("event_id:" + event_id);
     li_content = li_content + events[event_id].event + '</li>';
 
     // 插入事件到集合内
     event_id_set.add(event_id);
 
+    // 出生地绑定
+    if(age == 0) {
+        if(event_id == "11000") race = "yuansu";
+        else if(event_id == "12000") race = "qiuqiu";
+        else race = "none";
+    } else if(age == 1) {
+        if(event_id == "11010" || event_id == "11013" || event_id == "11016") birth_country = "mengde";
+        else if(event_id == "11011" || event_id == "11014" || event_id == "11017") birth_country = "liyue";
+        else if(event_id == "11012" || event_id == "11015" || event_id == "11018") birth_country = "daoqi";
+        else birth_country = "none";
+    } else if(age == 100) {
+        if(event_id == "99999") {
+            $('#event_show_ul').append(li_content);
+            // 保持滚动条一直处于底部
+            document.getElementById('event_show_ul').scrollTop = document.getElementById('event_show_ul').scrollHeight;
+
+            over_and_regame();
+            return;
+        }
+    }
+
     $('#event_show_ul').append(li_content);
     // 保持滚动条一直处于底部
     document.getElementById('event_show_ul').scrollTop = document.getElementById('event_show_ul').scrollHeight;
-    age++;
-
-    if(event_id == "99999") {
-        over_and_regame();
-        return;
-    }
+    age++;  
 
     // 死亡事件处理
     for(var i = 0; i < die_event.length; i++)
     {
         if(event_id == die_event[i]) {
             over_and_regame();
+            return;
         }
     }
-    
 }
 
 // 结束触发 重新开始弹窗
@@ -187,7 +226,7 @@ function over_and_regame() {
     // 关闭定时器
     clearInterval(auto_interval);
     $('#auto_btn').html("自动播放");
-    $('#auto_btn2').html("播放2x");
+    $('#auto_btn2').html("播放   2x");
 
     $("#zhezhao_div").show();
     $("#regame_page_div").show();

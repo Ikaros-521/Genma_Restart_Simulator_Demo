@@ -16,25 +16,45 @@ ul {
 }
 
 #home_page_div #start_game {
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
     cursor: pointer;
-    width: 150px;
-    height: 50px;
-    font-size: 20px;
+}
+
+#home_page_div #start_game:hover {
+    background: #f4a1de;
+    color: #fff;
+    transition: all .4s ease 0s;
 }
 
 #home_page_div #game_explain {
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
     cursor: pointer;
-    width: 150px;
-    height: 50px;
-    font-size: 20px;
+}
+
+#home_page_div #game_explain:hover {
+    background: #f4a1de;
+    color: #fff;
+    transition: all .4s ease 0s;
 }
 
 #home_page_div #game_explain_content {
-    width: 500px;
-    height: 400px;
+    width: 80%;
+    height: 50%;
     position: absolute;
     top: 20%;
-    left: 20%;
+    left: 10%;
     background-color: wheat;
     font-size: 20px;
     text-align: left;
@@ -56,6 +76,20 @@ ul {
 
 #prop_page_div #restart_game {
     float: right;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#prop_page_div #restart_game:hover {
+    background: #f4a1de;
+    color: #fff;
+    transition: all .4s ease 0s;
 }
 
 #prop_page_div #init_prop {
@@ -67,17 +101,54 @@ ul {
     font-size: 30px;
 }
 
+#prop_page_div #init_prop #prop_set_div li {
+    margin: 20px;
+}
+
 .prop_name_class {
     width: 200px;
     line-height: 20px;
     margin-right: 50px;
 }
 
-#start_new_life {
+.prop_class {
+    border: 1px #FFFFFF solid;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+#prop_page_div #random_set_prop {
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
     font-size: 30px;
-    /* border: 2px solid #c8c8c8; */
-    width: 300px;
-    margin-left: 30%;
+    cursor: pointer;
+}
+
+#prop_page_div #random_set_prop:hover {
+    background: #f4a1de;
+    color: #fff;
+    transition: all .4s ease 0s;
+}
+
+#prop_page_div #start_new_life {
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#prop_page_div #start_new_life:hover {
+    background: #f4a1de;
+    color: #fff;
+    transition: all .4s ease 0s;
 }
 
 /* 游戏页 */
@@ -147,14 +218,25 @@ ul {
 }
 
 #auto_btn_div #auto_btn {
-    width: 200px;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
     font-size: 30px;
-    margin: 0 50px;
+    cursor: pointer;
 }
 
 #auto_btn_div #auto_btn2 {
-    width: 200px;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
     font-size: 30px;
+    cursor: pointer;
 }
 
 #regame_page_div {
