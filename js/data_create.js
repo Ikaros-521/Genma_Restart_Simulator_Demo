@@ -1,4 +1,4 @@
-function data_create() {
+function age_create() {
     var str = "";
     for(var i = 0; i < 100; i++)
     {
@@ -7,7 +7,10 @@ function data_create() {
             str += "11";
             if(i < 10)
                 str += "0";
-            str += i.toString() + j.toString();
+            str += i.toString();
+            if(j < 10)
+                str += "0";
+            str += j.toString();
             if(j != 9) {
                 str += ",";
             }

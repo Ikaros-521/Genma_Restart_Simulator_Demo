@@ -230,6 +230,7 @@ ul {
     color: #EEEEEE;
     font-size: 1rem;
     position: relative;
+    text-align: left;
 }
 
 #auto_btn_div {
@@ -316,7 +317,12 @@ ul {
 }
 
 #header {
-    height: 100px;
+    height: 20%;
+    text-align: center;
+}
+
+img#header_img {
+    height: 100%;
 }
 
 #footer {

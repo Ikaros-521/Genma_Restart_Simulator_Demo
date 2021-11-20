@@ -13,6 +13,8 @@ var real_prop3 = 0;
 var event_id_set = new Set();
 // 种族绑定
 var race = "";
+// 元素
+var main_element = "";
 // 出生的国家
 var birth_country = "";
 
@@ -223,8 +225,15 @@ function load_one_event() {
 
     // console.log(get_random_num_by_range(1, ages[age].event.length));
 
-    var event_id = ages[age].event[(get_random_num_by_range(1, ages[age].event.length) - 1)];
-    // console.log("event_id:" + event_id);
+    var event_id, the_unit;
+    while(1) {
+        event_id = ages[age].event[(get_random_num_by_range(1, ages[age].event.length) - 1)];
+        // console.log("event_id:" + event_id);
+        the_unit = parseInt(event_id) % 10;
+        if(main_element == the_unit || main_element == 7 || main_element == 8 || main_element == 9)
+            break;
+    }
+    
     li_content = li_content + events[event_id].event + '</li>';
 
     // 插入事件到集合内
@@ -236,12 +245,31 @@ function load_one_event() {
         else if(event_id == "12000") race = "qiuqiu";
         else race = "none";
     } else if(age == 1) {
-        if(event_id == "11010" || event_id == "11013" || event_id == "11016") birth_country = "mengde";
-        else if(event_id == "11011" || event_id == "11014" || event_id == "11017") birth_country = "liyue";
-        else if(event_id == "11012" || event_id == "11015" || event_id == "11018") birth_country = "daoqi";
+        if(event_id == "110100" || event_id == "110103" || event_id == "110106") birth_country = "mengde";
+        else if(event_id == "110101" || event_id == "110104" || event_id == "110107") birth_country = "liyue";
+        else if(event_id == "110102" || event_id == "110105" || event_id == "110108") birth_country = "daoqi";
         else birth_country = "none";
+    } else if(age == 5) {
+        // 5岁 元素喜爱事件
+        if(event_id == "110500") main_element = 0;
+        else if(event_id == "110501") main_element = 1;
+        else if(event_id == "110502") main_element = 2;
+        else if(event_id == "110503") main_element = 3;
+        else if(event_id == "110504") main_element = 4;
+        else if(event_id == "110505") main_element = 5;
+        else if(event_id == "110506") main_element = 6;
+        else main_element = "none";
+    } else if(age == 10) {
+        if(main_element == 0) $("#header_img").attr("src", "./img/火史莱姆.png");
+        else if(main_element == 1) $("#header_img").attr("src", "./img/水史莱姆.png");
+        else if(main_element == 2) $("#header_img").attr("src", "./img/风史莱姆.png");
+        else if(main_element == 3) $("#header_img").attr("src", "./img/雷史莱姆.png");
+        else if(main_element == 4) $("#header_img").attr("src", "./img/草史莱姆.png");
+        else if(main_element == 5) $("#header_img").attr("src", "./img/冰史莱姆.png");
+        else if(main_element == 6) $("#header_img").attr("src", "./img/岩史莱姆.png");
+        else {}
     } else if(age == 100) {
-        if(event_id == "99999") {
+        if(event_id == "999999") {
             $('#event_show_ul').append(li_content);
             // 保持滚动条一直处于底部
             document.getElementById('event_show_ul').scrollTop = document.getElementById('event_show_ul').scrollHeight;
