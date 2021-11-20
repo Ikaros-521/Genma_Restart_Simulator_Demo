@@ -23,6 +23,7 @@ $(document).ready(function(){
     // $("#home_page_div").hide();
     // 调用判断当前访问页面是手机端还是移动端
     browserRedirect();
+    alert(navigator.userAgent.toLowerCase());
 })
 
 // 浏览器css检测匹配
