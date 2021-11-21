@@ -291,13 +291,13 @@ function load_one_event() {
         else if(main_element == 6) $("#header_img").attr("src", "./img/岩飘浮灵.png");
         else {}
     } else if(age == 50) {
-        if(main_element == 0) $("#header_img").attr("src", "./img/狂风之核.png");
-        else if(main_element == 1) $("#header_img").attr("src", "./img/狂风之核.png");
+        if(main_element == 0) $("#header_img").attr("src", "./img/狂火之核.png");
+        else if(main_element == 1) $("#header_img").attr("src", "./img/狂水之核.png");
         else if(main_element == 2) $("#header_img").attr("src", "./img/狂风之核.png");
-        else if(main_element == 3) $("#header_img").attr("src", "./img/狂风之核.png");
-        else if(main_element == 4) $("#header_img").attr("src", "./img/狂风之核.png");
-        else if(main_element == 5) $("#header_img").attr("src", "./img/狂风之核.png");
-        else if(main_element == 6) $("#header_img").attr("src", "./img/狂风之核.png");
+        else if(main_element == 3) $("#header_img").attr("src", "./img/狂雷之核.png");
+        else if(main_element == 4) $("#header_img").attr("src", "./img/狂草之核.png");
+        else if(main_element == 5) $("#header_img").attr("src", "./img/狂冰之核.png");
+        else if(main_element == 6) $("#header_img").attr("src", "./img/狂岩之核.png");
         else {}
     } else if(age == 60) {
         if(main_element == 0) $("#header_img").attr("src", "./img/无相之火.png");
