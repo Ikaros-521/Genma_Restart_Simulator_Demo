@@ -282,12 +282,12 @@ function load_one_event() {
         else if(main_element == 6) $("#header_img").attr("src", "./img/大型岩史莱姆.png");
         else {}
     } else if(age == 40) {
-        if(main_element == 0) $("#header_img").attr("src", "./img/水飘浮灵.png");
+        if(main_element == 0) $("#header_img").attr("src", "./img/火飘浮灵.png");
         else if(main_element == 1) $("#header_img").attr("src", "./img/水飘浮灵.png");
         else if(main_element == 2) $("#header_img").attr("src", "./img/风飘浮灵.png");
-        else if(main_element == 3) $("#header_img").attr("src", "./img/风飘浮灵.png");
-        else if(main_element == 4) $("#header_img").attr("src", "./img/风飘浮灵.png");
-        else if(main_element == 5) $("#header_img").attr("src", "./img/岩飘浮灵.png");
+        else if(main_element == 3) $("#header_img").attr("src", "./img/雷飘浮灵.png");
+        else if(main_element == 4) $("#header_img").attr("src", "./img/草飘浮灵.png");
+        else if(main_element == 5) $("#header_img").attr("src", "./img/冰飘浮灵.png");
         else if(main_element == 6) $("#header_img").attr("src", "./img/岩飘浮灵.png");
         else {}
     } else if(age == 50) {
@@ -304,18 +304,18 @@ function load_one_event() {
         else if(main_element == 1) $("#header_img").attr("src", "./img/无相之水.png");
         else if(main_element == 2) $("#header_img").attr("src", "./img/无相之风.png");
         else if(main_element == 3) $("#header_img").attr("src", "./img/无相之雷.png");
-        else if(main_element == 4) $("#header_img").attr("src", "./img/无相之火.png");
+        else if(main_element == 4) $("#header_img").attr("src", "./img/无相之草.png");
         else if(main_element == 5) $("#header_img").attr("src", "./img/无相之冰.png");
         else if(main_element == 6) $("#header_img").attr("src", "./img/无相之岩.png");
         else {}
     } else if(age == 70) {
-        if(main_element == 0) $("#header_img").attr("src", "./img/纯水精灵.png");
+        if(main_element == 0) $("#header_img").attr("src", "./img/纯火精灵.png");
         else if(main_element == 1) $("#header_img").attr("src", "./img/纯水精灵.png");
-        else if(main_element == 2) $("#header_img").attr("src", "./img/纯水精灵.png");
+        else if(main_element == 2) $("#header_img").attr("src", "./img/纯风精灵.png");
         else if(main_element == 3) $("#header_img").attr("src", "./img/雷音权现.png");
-        else if(main_element == 4) $("#header_img").attr("src", "./img/雷音权现.png");
-        else if(main_element == 5) $("#header_img").attr("src", "./img/雷音权现.png");
-        else if(main_element == 6) $("#header_img").attr("src", "./img/雷音权现.png");
+        else if(main_element == 4) $("#header_img").attr("src", "./img/纯草精灵.png");
+        else if(main_element == 5) $("#header_img").attr("src", "./img/纯冰精灵.png");
+        else if(main_element == 6) $("#header_img").attr("src", "./img/磐岩精灵.png");
         else {}
     } else if(age == 100) {
         if(event_id == "999999") {
