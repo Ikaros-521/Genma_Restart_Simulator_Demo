@@ -241,8 +241,8 @@ function load_one_event() {
 
     // 出生地绑定
     if(age == 0) {
-        if(event_id == "11000") race = "yuansu";
-        else if(event_id == "12000") race = "qiuqiu";
+        if(event_id == "110000") race = "yuansu";
+        else if(event_id == "120000") race = "qiuqiu";
         else race = "none";
     } else if(age == 1) {
         if(event_id == "110100" || event_id == "110103" || event_id == "110106") birth_country = "mengde";
@@ -329,6 +329,9 @@ function load_one_event() {
     // 保持滚动条一直处于底部
     document.getElementById('event_show_ul').scrollTop = document.getElementById('event_show_ul').scrollHeight;
     age++;  
+
+
+    console.log(event_id);
 
     // 死亡事件处理
     for(var i = 0; i < die_event.length; i++)
