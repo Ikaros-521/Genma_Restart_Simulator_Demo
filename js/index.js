@@ -324,6 +324,7 @@ function load_one_event() {
             document.getElementById('event_show_ul').scrollTop = document.getElementById('event_show_ul').scrollHeight;
             $("#header_img").attr("src", "./img/魔神.png");
 
+            age++;
             over_and_regame();
             return;
         }
