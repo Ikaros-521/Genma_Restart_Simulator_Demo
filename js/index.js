@@ -230,8 +230,12 @@ function load_one_event() {
         event_id = ages[age].event[(get_random_num_by_range(1, ages[age].event.length) - 1)];
         // console.log("event_id:" + event_id);
         the_unit = parseInt(event_id) % 10;
-        if(main_element == the_unit || the_unit == 7 || the_unit == 8 || the_unit == 9)
+        if(age > 5) {
+            if(main_element == the_unit || the_unit == 7 || the_unit == 8 || the_unit == 9)
+                break;
+        } else {
             break;
+        }
     }
     
     li_content = li_content + events[event_id].event + '</li>';
@@ -258,7 +262,7 @@ function load_one_event() {
         else if(event_id == "110504") main_element = 4;
         else if(event_id == "110505") main_element = 5;
         else if(event_id == "110506") main_element = 6;
-        else main_element = "none";
+        else main_element = 0;
     } else if(age == 10) {
         if(main_element == 0) $("#header_img").attr("src", "./img/火史莱姆.png");
         else if(main_element == 1) $("#header_img").attr("src", "./img/水史莱姆.png");
@@ -329,9 +333,6 @@ function load_one_event() {
     // 保持滚动条一直处于底部
     document.getElementById('event_show_ul').scrollTop = document.getElementById('event_show_ul').scrollHeight;
     age++;  
-
-
-    console.log(event_id);
 
     // 死亡事件处理
     for(var i = 0; i < die_event.length; i++)
