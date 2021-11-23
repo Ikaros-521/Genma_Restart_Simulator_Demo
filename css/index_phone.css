@@ -67,13 +67,13 @@ ul {
     height: 60%;
     position: absolute;
     top: 20%;
-    left: 5%;
     background-color: wheat;
     font-size: 20px;
     text-align: left;
     color: black;
     border-radius: 5px;
     display: none;
+    padding: 15px;
 }
 
 #home_page_div #game_explain_content span {

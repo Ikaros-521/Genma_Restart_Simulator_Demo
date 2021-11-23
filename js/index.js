@@ -231,7 +231,7 @@ function load_one_event() {
         // console.log("event_id:" + event_id);
         the_unit = parseInt(event_id) % 10;
         if(age > 5) {
-            if(main_element == the_unit || the_unit == 7 || the_unit == 8 || the_unit == 9)
+            if(main_element == the_unit || the_unit == 8 || the_unit == 9)
                 break;
         } else {
             break;
@@ -262,6 +262,7 @@ function load_one_event() {
         else if(event_id == "110504") main_element = 4;
         else if(event_id == "110505") main_element = 5;
         else if(event_id == "110506") main_element = 6;
+        else if(event_id == "110507") main_element = 7;
         else main_element = 0;
     } else if(age == 10) {
         if(main_element == 0) $("#header_img").attr("src", "./img/火史莱姆.png");
@@ -271,6 +272,7 @@ function load_one_event() {
         else if(main_element == 4) $("#header_img").attr("src", "./img/草史莱姆.png");
         else if(main_element == 5) $("#header_img").attr("src", "./img/冰史莱姆.png");
         else if(main_element == 6) $("#header_img").attr("src", "./img/岩史莱姆.png");
+        else if(main_element == 7) $("#header_img").attr("src", "./img/无属性史莱姆.png");
         else {}
     } else if(age == 20) {
         if(main_element == 0) $("#header_img").attr("src", "./img/大型火史莱姆.png");
@@ -280,6 +282,7 @@ function load_one_event() {
         else if(main_element == 4) $("#header_img").attr("src", "./img/大型草史莱姆.png");
         else if(main_element == 5) $("#header_img").attr("src", "./img/大型冰史莱姆.png");
         else if(main_element == 6) $("#header_img").attr("src", "./img/大型岩史莱姆.png");
+        else if(main_element == 7) $("#header_img").attr("src", "./img/大型无属性史莱姆.png");
         else {}
     } else if(age == 40) {
         if(main_element == 0) $("#header_img").attr("src", "./img/火飘浮灵.png");
@@ -289,6 +292,7 @@ function load_one_event() {
         else if(main_element == 4) $("#header_img").attr("src", "./img/草飘浮灵.png");
         else if(main_element == 5) $("#header_img").attr("src", "./img/冰飘浮灵.png");
         else if(main_element == 6) $("#header_img").attr("src", "./img/岩飘浮灵.png");
+        else if(main_element == 7) $("#header_img").attr("src", "./img/无属性飘浮灵.png");
         else {}
     } else if(age == 50) {
         if(main_element == 0) $("#header_img").attr("src", "./img/狂火之核.png");
@@ -298,6 +302,7 @@ function load_one_event() {
         else if(main_element == 4) $("#header_img").attr("src", "./img/狂草之核.png");
         else if(main_element == 5) $("#header_img").attr("src", "./img/狂冰之核.png");
         else if(main_element == 6) $("#header_img").attr("src", "./img/狂岩之核.png");
+        else if(main_element == 7) $("#header_img").attr("src", "./img/狂无之核.png");
         else {}
     } else if(age == 60) {
         if(main_element == 0) $("#header_img").attr("src", "./img/无相之火.png");
@@ -307,6 +312,7 @@ function load_one_event() {
         else if(main_element == 4) $("#header_img").attr("src", "./img/无相之草.png");
         else if(main_element == 5) $("#header_img").attr("src", "./img/无相之冰.png");
         else if(main_element == 6) $("#header_img").attr("src", "./img/无相之岩.png");
+        else if(main_element == 7) $("#header_img").attr("src", "./img/无相之无色.png");
         else {}
     } else if(age == 70) {
         if(main_element == 0) $("#header_img").attr("src", "./img/纯火精灵.png");
@@ -316,6 +322,7 @@ function load_one_event() {
         else if(main_element == 4) $("#header_img").attr("src", "./img/纯草精灵.png");
         else if(main_element == 5) $("#header_img").attr("src", "./img/纯冰精灵.png");
         else if(main_element == 6) $("#header_img").attr("src", "./img/磐岩精灵.png");
+        else if(main_element == 7) $("#header_img").attr("src", "./img/虚无精灵.png");
         else {}
     } else if(age == 100) {
         if(event_id == "999999") {
