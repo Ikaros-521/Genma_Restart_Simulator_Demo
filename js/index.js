@@ -245,24 +245,24 @@ function load_one_event() {
 
     // 出生地绑定
     if(age == 0) {
-        if(event_id == "110000") race = "yuansu";
-        else if(event_id == "120000") race = "qiuqiu";
+        if(["110000", "110001", "110002", "110003", "110004", "110005", "110006"].indexOf(event_id) > -1) race = "yuansu";
+        else if(["120000", "120001", "120002", "120003", "120004", "120005", "120006"].indexOf(event_id) > -1) race = "qiuqiu";
         else race = "none";
     } else if(age == 1) {
-        if(event_id == "110100" || event_id == "110103" || event_id == "110106") birth_country = "mengde";
-        else if(event_id == "110101" || event_id == "110104" || event_id == "110107") birth_country = "liyue";
-        else if(event_id == "110102" || event_id == "110105" || event_id == "110108") birth_country = "daoqi";
+        if(["110100", "110103", "110106", "120100", "120103", "120106"].indexOf(event_id) > -1) birth_country = "mengde";
+        else if(["110101", "110104", "110107", "120101", "120104", "120107"].indexOf(event_id) > -1) birth_country = "liyue";
+        else if(["110102", "110105", "110108", "120102", "120105", "120108"].indexOf(event_id) > -1) birth_country = "daoqi";
         else birth_country = "none";
     } else if(age == 5) {
         // 5岁 元素喜爱事件
-        if(event_id == "110500") main_element = 0;
-        else if(event_id == "110501") main_element = 1;
-        else if(event_id == "110502") main_element = 2;
-        else if(event_id == "110503") main_element = 3;
-        else if(event_id == "110504") main_element = 4;
-        else if(event_id == "110505") main_element = 5;
-        else if(event_id == "110506") main_element = 6;
-        else if(event_id == "110507") main_element = 7;
+        if(event_id == "110500" || event_id == "120500") main_element = 0;
+        else if(event_id == "110501" || event_id == "120501") main_element = 1;
+        else if(event_id == "110502" || event_id == "120502") main_element = 2;
+        else if(event_id == "110503" || event_id == "120503") main_element = 3;
+        else if(event_id == "110504" || event_id == "120504") main_element = 4;
+        else if(event_id == "110505" || event_id == "120505") main_element = 5;
+        else if(event_id == "110506" || event_id == "120506") main_element = 6;
+        else if(event_id == "110507" || event_id == "120507") main_element = 7;
         else main_element = 0;
     } else if(age == 10) {
         if(main_element == 0) $("#header_img").attr("src", "./img/火史莱姆.png");
