@@ -245,8 +245,9 @@ function load_one_event() {
 
     // 出生地绑定
     if(age == 0) {
-        if(["110000", "110001", "110002", "110003", "110004", "110005", "110006"].indexOf(event_id) > -1) race = "yuansu";
-        else if(["120000", "120001", "120002", "120003", "120004", "120005", "120006"].indexOf(event_id) > -1) race = "qiuqiu";
+        console.log("age:0, event_id:" + event_id);
+        if(["110000", "110001", "110002", "110003", "110004", "110005", "110006"].indexOf(event_id.toString()) > -1) race = "yuansu";
+        else if(["120000", "120001", "120002", "120003", "120004", "120005", "120006"].indexOf(event_id.toString()) > -1) race = "qiuqiu";
         else race = "none";
     } else if(age == 1) {
         if(["110100", "110103", "110106", "120100", "120103", "120106"].indexOf(event_id) > -1) birth_country = "mengde";
@@ -254,76 +255,72 @@ function load_one_event() {
         else if(["110102", "110105", "110108", "120102", "120105", "120108"].indexOf(event_id) > -1) birth_country = "daoqi";
         else birth_country = "none";
     } else if(age == 5) {
-        // 5岁 元素喜爱事件
-        if(event_id == "110500" || event_id == "120500") main_element = 0;
-        else if(event_id == "110501" || event_id == "120501") main_element = 1;
-        else if(event_id == "110502" || event_id == "120502") main_element = 2;
-        else if(event_id == "110503" || event_id == "120503") main_element = 3;
-        else if(event_id == "110504" || event_id == "120504") main_element = 4;
-        else if(event_id == "110505" || event_id == "120505") main_element = 5;
-        else if(event_id == "110506" || event_id == "120506") main_element = 6;
-        else if(event_id == "110507" || event_id == "120507") main_element = 7;
-        else main_element = 0;
+        if(race == "yuansu") {
+            // 5岁 元素线的元素喜爱事件
+            if(event_id == "110500") main_element = 0;
+            else if(event_id == "110501") main_element = 1;
+            else if(event_id == "110502") main_element = 2;
+            else if(event_id == "110503") main_element = 3;
+            else if(event_id == "110504") main_element = 4;
+            else if(event_id == "110505") main_element = 5;
+            else if(event_id == "110506") main_element = 6;
+            else if(event_id == "110507") main_element = 7;
+            else main_element = 0;
+        }
     } else if(age == 10) {
-        if(main_element == 0) $("#header_img").attr("src", "./img/火史莱姆.png");
-        else if(main_element == 1) $("#header_img").attr("src", "./img/水史莱姆.png");
-        else if(main_element == 2) $("#header_img").attr("src", "./img/风史莱姆.png");
-        else if(main_element == 3) $("#header_img").attr("src", "./img/雷史莱姆.png");
-        else if(main_element == 4) $("#header_img").attr("src", "./img/草史莱姆.png");
-        else if(main_element == 5) $("#header_img").attr("src", "./img/冰史莱姆.png");
-        else if(main_element == 6) $("#header_img").attr("src", "./img/岩史莱姆.png");
-        else if(main_element == 7) $("#header_img").attr("src", "./img/无属性史莱姆.png");
-        else {}
+        console.log("race:" + race + ", main_element:" + main_element);
+        if(race == "yuansu") {
+            var img_path = ["./img/火史莱姆.png", "./img/水史莱姆.png", "./img/风史莱姆.png", "./img/雷史莱姆.png", 
+                "./img/草史莱姆.png", "./img/冰史莱姆.png", "./img/岩史莱姆.png", "./img/无属性史莱姆.png"];
+            $("#header_img").attr("src", img_path[main_element]);
+        } else if(race == "qiuqiu") {
+
+        } else {}
     } else if(age == 20) {
-        if(main_element == 0) $("#header_img").attr("src", "./img/大型火史莱姆.png");
-        else if(main_element == 1) $("#header_img").attr("src", "./img/大型水史莱姆.png");
-        else if(main_element == 2) $("#header_img").attr("src", "./img/大型风史莱姆.png");
-        else if(main_element == 3) $("#header_img").attr("src", "./img/大型雷史莱姆.png");
-        else if(main_element == 4) $("#header_img").attr("src", "./img/大型草史莱姆.png");
-        else if(main_element == 5) $("#header_img").attr("src", "./img/大型冰史莱姆.png");
-        else if(main_element == 6) $("#header_img").attr("src", "./img/大型岩史莱姆.png");
-        else if(main_element == 7) $("#header_img").attr("src", "./img/大型无属性史莱姆.png");
-        else {}
+        if(race == "yuansu") {
+            var img_path = ["./img/大型火史莱姆.png", "./img/大型水史莱姆.png", "./img/大型风史莱姆.png", "./img/大型雷史莱姆.png", 
+                "./img/大型草史莱姆.png", "./img/大型冰史莱姆.png", "./img/大型岩史莱姆.png", "./img/大型无属性史莱姆.png"];
+            $("#header_img").attr("src", img_path[main_element]);
+        }  else if(race == "qiuqiu") {
+            // 20岁 丘丘线的元素喜爱事件
+            if(event_id == "122000") main_element = 0;
+            else if(event_id == "122001") main_element = 1;
+            else if(event_id == "122002") main_element = 2;
+            else if(event_id == "122003") main_element = 3;
+            else if(event_id == "122004") main_element = 4;
+            else if(event_id == "122005") main_element = 5;
+            else if(event_id == "122006") main_element = 6;
+            else if(event_id == "122007") main_element = 7;
+            else main_element = 0;
+        } else {}
     } else if(age == 40) {
-        if(main_element == 0) $("#header_img").attr("src", "./img/火飘浮灵.png");
-        else if(main_element == 1) $("#header_img").attr("src", "./img/水飘浮灵.png");
-        else if(main_element == 2) $("#header_img").attr("src", "./img/风飘浮灵.png");
-        else if(main_element == 3) $("#header_img").attr("src", "./img/雷飘浮灵.png");
-        else if(main_element == 4) $("#header_img").attr("src", "./img/草飘浮灵.png");
-        else if(main_element == 5) $("#header_img").attr("src", "./img/冰飘浮灵.png");
-        else if(main_element == 6) $("#header_img").attr("src", "./img/岩飘浮灵.png");
-        else if(main_element == 7) $("#header_img").attr("src", "./img/无属性飘浮灵.png");
-        else {}
+        if(race == "yuansu") {
+            var img_path = ["./img/火飘浮灵.png", "./img/水飘浮灵.png", "./img/风飘浮灵.png", "./img/雷飘浮灵.png", 
+                "./img/草飘浮灵.png", "./img/冰飘浮灵.png", "./img/岩飘浮灵.png", "./img/无属性飘浮灵.png"];
+            $("#header_img").attr("src", img_path[main_element]);
+        }  else if(race == "qiuqiu") {
+        } else {}
     } else if(age == 50) {
-        if(main_element == 0) $("#header_img").attr("src", "./img/狂火之核.png");
-        else if(main_element == 1) $("#header_img").attr("src", "./img/狂水之核.png");
-        else if(main_element == 2) $("#header_img").attr("src", "./img/狂风之核.png");
-        else if(main_element == 3) $("#header_img").attr("src", "./img/狂雷之核.png");
-        else if(main_element == 4) $("#header_img").attr("src", "./img/狂草之核.png");
-        else if(main_element == 5) $("#header_img").attr("src", "./img/狂冰之核.png");
-        else if(main_element == 6) $("#header_img").attr("src", "./img/狂岩之核.png");
-        else if(main_element == 7) $("#header_img").attr("src", "./img/狂无之核.png");
-        else {}
+        if(race == "yuansu") {
+            var img_path = ["./img/狂火之核.png", "./img/狂水之核.png", "./img/狂风之核.png", "./img/狂雷之核.png", 
+                "./img/狂草之核.png", "./img/狂冰之核.png", "./img/狂岩之核.png", "./img/狂无之核.png"];
+            $("#header_img").attr("src", img_path[main_element]);
+        }  else if(race == "qiuqiu") {
+        } else {}
     } else if(age == 60) {
-        if(main_element == 0) $("#header_img").attr("src", "./img/无相之火.png");
-        else if(main_element == 1) $("#header_img").attr("src", "./img/无相之水.png");
-        else if(main_element == 2) $("#header_img").attr("src", "./img/无相之风.png");
-        else if(main_element == 3) $("#header_img").attr("src", "./img/无相之雷.png");
-        else if(main_element == 4) $("#header_img").attr("src", "./img/无相之草.png");
-        else if(main_element == 5) $("#header_img").attr("src", "./img/无相之冰.png");
-        else if(main_element == 6) $("#header_img").attr("src", "./img/无相之岩.png");
-        else if(main_element == 7) $("#header_img").attr("src", "./img/无相之无色.png");
-        else {}
+        if(race == "yuansu") {
+            var img_path = ["./img/无相之火.png", "./img/无相之水.png", "./img/无相之风.png", "./img/无相之雷.png", 
+                "./img/无相之草.png", "./img/无相之冰.png", "./img/无相之岩.png", "./img/无相之无色.png"];
+            $("#header_img").attr("src", img_path[main_element]);
+        }  else if(race == "qiuqiu") {
+        } else {}
     } else if(age == 70) {
-        if(main_element == 0) $("#header_img").attr("src", "./img/纯火精灵.png");
-        else if(main_element == 1) $("#header_img").attr("src", "./img/纯水精灵.png");
-        else if(main_element == 2) $("#header_img").attr("src", "./img/纯风精灵.png");
-        else if(main_element == 3) $("#header_img").attr("src", "./img/雷音权现.png");
-        else if(main_element == 4) $("#header_img").attr("src", "./img/纯草精灵.png");
-        else if(main_element == 5) $("#header_img").attr("src", "./img/纯冰精灵.png");
-        else if(main_element == 6) $("#header_img").attr("src", "./img/磐岩精灵.png");
-        else if(main_element == 7) $("#header_img").attr("src", "./img/虚无精灵.png");
-        else {}
+        if(race == "yuansu") {
+            var img_path = ["./img/纯火精灵.png", "./img/纯水精灵.png", "./img/纯风精灵.png", "./img/雷音权现.png", 
+                "./img/纯草精灵.png", "./img/纯冰精灵.png", "./img/磐岩精灵.png", "./img/虚无精灵.png"];
+            $("#header_img").attr("src", img_path[main_element]);
+        }  else if(race == "qiuqiu") {
+        } else {}
     } else if(age == 100) {
         if(event_id == "999999") {
             $('#event_show_ul').append(li_content);
@@ -360,7 +357,7 @@ function over_and_regame() {
     $('#auto_btn2').html("播放   2x");
 
     $("#zhezhao_div").show();
-    $("#regame_page_div").show();
+    setTimeout(function() {$("#regame_page_div").show()}, 1500);
 
     var summary;
     summary = "真是精彩的魔生~\n";
