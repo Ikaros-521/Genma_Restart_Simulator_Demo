@@ -229,12 +229,29 @@ function load_one_event() {
     while(1) {
         event_id = ages[age].event[(get_random_num_by_range(1, ages[age].event.length) - 1)];
         // console.log("event_id:" + event_id);
+        if(age < 1 || age > 99) break;
+
+        // 区分种族
+        the_race = parseInt(parseInt(event_id) / 10000);
+        // 区分事件线
         the_unit = parseInt(event_id) % 10;
-        if(age > 5) {
-            if(main_element == the_unit || the_unit == 8 || the_unit == 9)
+
+        // console.log("the_race:" + the_race + ", the_unit:" + the_unit);
+        
+        if(race == "yuansu" && the_race == 11) {
+            if(age > 5) {
+                if(main_element == the_unit || the_unit == 8 || the_unit == 9)
+                    break;
+            } else {
                 break;
-        } else {
-            break;
+            }
+        } else if(race == "qiuqiu" && the_race == 12) {
+            if(age > 20) {
+                if(main_element == the_unit || the_unit == 8 || the_unit == 9)
+                    break;
+            } else {
+                break;
+            }
         }
     }
     
@@ -247,8 +264,10 @@ function load_one_event() {
     if(age == 0) {
         console.log("age:0, event_id:" + event_id);
         if(["110000", "110001", "110002", "110003", "110004", "110005", "110006"].indexOf(event_id.toString()) > -1) race = "yuansu";
-        else if(["120000", "120001", "120002", "120003", "120004", "120005", "120006"].indexOf(event_id.toString()) > -1) race = "qiuqiu";
-        else race = "none";
+        else if(["120000", "120001", "120002", "120003", "120004", "120005", "120006"].indexOf(event_id.toString()) > -1) {
+            race = "qiuqiu";
+            $("#header_img").attr("src", "./img/丘丘人.png");
+        } else race = "none";
     } else if(age == 1) {
         if(["110100", "110103", "110106", "120100", "120103", "120106"].indexOf(event_id) > -1) birth_country = "mengde";
         else if(["110101", "110104", "110107", "120101", "120104", "120107"].indexOf(event_id) > -1) birth_country = "liyue";
@@ -274,7 +293,11 @@ function load_one_event() {
                 "./img/草史莱姆.png", "./img/冰史莱姆.png", "./img/岩史莱姆.png", "./img/无属性史莱姆.png"];
             $("#header_img").attr("src", img_path[main_element]);
         } else if(race == "qiuqiu") {
-
+            var img_path = ["./img/打手丘丘人.png", "./img/木盾丘丘人.png", "./img/射手丘丘人.png", "./img/爆弹丘丘人.png", 
+                "./img/打手丘丘人.png", "./img/木盾丘丘人.png", "./img/射手丘丘人.png", "./img/爆弹丘丘人.png",
+                "./img/丘丘人.png", "./img/丘丘人.png"];
+            var index = ["121000", "121001", "121002", "121003", "121004", "121005", "121006", "121007", "121008", "121009"].indexOf(event_id.toString());
+            $("#header_img").attr("src", img_path[index]);
         } else {}
     } else if(age == 20) {
         if(race == "yuansu") {
@@ -283,6 +306,8 @@ function load_one_event() {
             $("#header_img").attr("src", img_path[main_element]);
         }  else if(race == "qiuqiu") {
             // 20岁 丘丘线的元素喜爱事件
+            var img_path = ["./img/冲锋丘丘人.png", "./img/冰盾丘丘人.png", "./img/火箭丘丘人.png", "./img/雷弹丘丘人.png", 
+                "./img/奇怪的丘丘人.png", "./img/岩盾丘丘人.png", "./img/雷箭丘丘人.png", "./img/冰弹丘丘人.png"];
             if(event_id == "122000") main_element = 0;
             else if(event_id == "122001") main_element = 1;
             else if(event_id == "122002") main_element = 2;
@@ -292,6 +317,7 @@ function load_one_event() {
             else if(event_id == "122006") main_element = 6;
             else if(event_id == "122007") main_element = 7;
             else main_element = 0;
+            $("#header_img").attr("src", img_path[main_element]);
         } else {}
     } else if(age == 40) {
         if(race == "yuansu") {
@@ -299,6 +325,13 @@ function load_one_event() {
                 "./img/草飘浮灵.png", "./img/冰飘浮灵.png", "./img/岩飘浮灵.png", "./img/无属性飘浮灵.png"];
             $("#header_img").attr("src", img_path[main_element]);
         }  else if(race == "qiuqiu") {
+            var img_path = ["./img/火丘丘萨满.png", "./img/水丘丘萨满.png", "./img/火丘丘萨满.png", "./img/雷丘丘萨满.png", 
+                "./img/草丘丘萨满.png", "./img/岩丘丘萨满.png", "./img/雷丘丘萨满.png", "./img/冰丘丘萨满.png", "./img/风丘丘萨满.png"];
+            if(event_id == "124008") {
+                $("#header_img").attr("src", img_path[8]);
+                // 新生元素
+                main_element = 8;
+            } else $("#header_img").attr("src", img_path[main_element]);
         } else {}
     } else if(age == 50) {
         if(race == "yuansu") {
@@ -306,6 +339,10 @@ function load_one_event() {
                 "./img/狂草之核.png", "./img/狂冰之核.png", "./img/狂岩之核.png", "./img/狂无之核.png"];
             $("#header_img").attr("src", img_path[main_element]);
         }  else if(race == "qiuqiu") {
+            var img_path = ["./img/火斧丘丘暴徒.png", "./img/冰盾丘丘暴徒.png", "./img/火斧丘丘暴徒.png", "./img/雷盾丘丘暴徒.png", 
+                "./img/木盾丘丘暴徒.png", "./img/岩盾丘丘暴徒.png", "./img/雷斧丘丘暴徒.png", "./img/冰斧丘丘暴徒.png", "./img/风斧丘丘暴徒.png"];
+            if(event_id == "125008") $("#header_img").attr("src", img_path[8]);
+            else $("#header_img").attr("src", img_path[main_element]);
         } else {}
     } else if(age == 60) {
         if(race == "yuansu") {
@@ -320,6 +357,10 @@ function load_one_event() {
                 "./img/纯草精灵.png", "./img/纯冰精灵.png", "./img/磐岩精灵.png", "./img/虚无精灵.png"];
             $("#header_img").attr("src", img_path[main_element]);
         }  else if(race == "qiuqiu") {
+            var img_path = ["./img/丘丘烈火王.png", "./img/丘丘霜铠王.png", "./img/丘丘烈火王.png", "./img/丘丘雷兜王.png", 
+                "./img/丘丘百木王.png", "./img/丘丘岩盔王.png", "./img/丘丘雷兜王.png", "./img/丘丘霜铠王.png", "./img/丘丘狂风王.png"];
+            if(event_id == "127008") $("#header_img").attr("src", img_path[8]);
+            else $("#header_img").attr("src", img_path[main_element]);
         } else {}
     } else if(age == 100) {
         if(event_id == "999999") {
