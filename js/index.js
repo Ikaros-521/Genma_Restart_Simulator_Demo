@@ -370,7 +370,7 @@ function load_one_event() {
             $("#header_img").attr("src", "./img/魔神.png");
 
             age++;
-            over_and_regame();
+            over_and_regame(event_id);
             return;
         }
     }
@@ -384,14 +384,14 @@ function load_one_event() {
     for(var i = 0; i < die_event.length; i++)
     {
         if(event_id == die_event[i]) {
-            over_and_regame();
+            over_and_regame(event_id);
             return;
         }
     }
 }
 
 // 结束触发 重新开始弹窗
-function over_and_regame() {
+function over_and_regame(event_id) {
     // 关闭定时器
     clearInterval(auto_interval);
     $('#auto_btn').html("自动播放");
@@ -400,8 +400,14 @@ function over_and_regame() {
     $("#zhezhao_div").show();
     setTimeout(function() {$("#regame_page_div").show()}, 1500);
 
+    console.log("event_id:" + event_id);
+
     var summary;
-    summary = "真是精彩的魔生~\n";
+    if(event_id == "999999")
+        summary = "恭迎魔神降临~（此处掌声）\n";
+    else
+        summary = "死因：" + events[event_id].event + "\n";
+    summary = summary + "真是精彩的魔生~\n";
     summary = summary + "你一共活了" + (age - 1) + "年\n";
     summary = summary + "你的初始属性为：体质"+ init_prop1 + "，幸运"+init_prop2+"，智慧"+init_prop3+"\n";
     summary = summary + "你的最终属性为：体质"+ real_prop1 + "，幸运"+real_prop2+"，智慧"+real_prop3+"\n";
