@@ -226,7 +226,9 @@ function load_one_event() {
     // console.log(get_random_num_by_range(1, ages[age].event.length));
 
     var event_id, the_unit;
+    // 摇取event_id
     while(1) {
+        // 根据ages里不同年龄的event组内摇取event_id
         event_id = ages[age].event[(get_random_num_by_range(1, ages[age].event.length) - 1)];
         // console.log("event_id:" + event_id);
         if(age < 1 || age > 99) break;
@@ -238,15 +240,20 @@ function load_one_event() {
 
         // console.log("the_race:" + the_race + ", the_unit:" + the_unit);
         
+        // 判断生成的种族线是否匹配
         if(race == "yuansu" && the_race == 11) {
+            // 5年后元素线主线固定
             if(age > 5) {
+                // 8默认为随机线，9为死亡线
                 if(main_element == the_unit || the_unit == 8 || the_unit == 9)
                     break;
             } else {
                 break;
             }
         } else if(race == "qiuqiu" && the_race == 12) {
+            // 20年后元素线主线固定，40年特殊风属性觉醒
             if(age > 20) {
+                // 9为死亡线
                 if(main_element == the_unit || the_unit == 8 || the_unit == 9)
                     break;
             } else {
@@ -255,16 +262,28 @@ function load_one_event() {
         }
     }
     
+    // li内容拼接
     li_content = li_content + events[event_id].event + '</li>';
-
     // 插入事件到集合内
     event_id_set.add(event_id);
 
-    // 出生地绑定
+    // 如果存在 props属性 变更
+    if(events[event_id].props) {
+        real_prop1 += events[event_id].props[0];
+        real_prop2 += events[event_id].props[1];
+        real_prop3 += events[event_id].props[2];
+        document.getElementsByClassName("real_prop_class")[0].innerText = real_prop1;
+        document.getElementsByClassName("real_prop_class")[1].innerText = real_prop2;
+        document.getElementsByClassName("real_prop_class")[2].innerText = real_prop3;
+    }
+
+    // 种族、出生地、元素绑定。预览图展示
     if(age == 0) {
         console.log("age:0, event_id:" + event_id);
-        if(["110000", "110001", "110002", "110003", "110004", "110005", "110006"].indexOf(event_id.toString()) > -1) race = "yuansu";
-        else if(["120000", "120001", "120002", "120003", "120004", "120005", "120006"].indexOf(event_id.toString()) > -1) {
+        if(["110000", "110001", "110002", "110003", "110004", "110005", "110006"].indexOf(event_id.toString()) > -1) {
+            race = "yuansu";
+            $("#header_img").attr("src", "./img/史莱姆凝液.png");
+        } else if(["120000", "120001", "120002", "120003", "120004", "120005", "120006"].indexOf(event_id.toString()) > -1) {
             race = "qiuqiu";
             $("#header_img").attr("src", "./img/丘丘人.png");
         } else race = "none";
@@ -363,6 +382,7 @@ function load_one_event() {
             else $("#header_img").attr("src", img_path[main_element]);
         } else {}
     } else if(age == 100) {
+        // 进入最终事件999999
         if(event_id == "999999") {
             $('#event_show_ul').append(li_content);
             // 保持滚动条一直处于底部

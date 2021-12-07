@@ -286,6 +286,7 @@ ul {
     top: 100px;
     margin: 0px 50px 0px 50px;
     white-space: pre-wrap;
+    line-height: 30px;
 }
 
 #regame_page_div #restart_game2 {
