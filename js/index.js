@@ -162,6 +162,9 @@ function start_new_life_click() {
         return;
     }
 
+    // 事件集合清空
+    event_id_set.clear();
+
     // 页面显示隐藏切换
     $("#home_page_div").hide();
     $("#prop_page_div").hide();
@@ -221,14 +224,14 @@ function get_random_num_by_range(start, end) {
 // 加载一个事件
 function load_one_event() {
     var li_content = "";
-    li_content = '<li class="item" >第' + age + '年：';
+    li_content = '<li class="item" >第' + age + '月：';
 
     // console.log(get_random_num_by_range(1, ages[age].event.length));
 
     var event_id, the_unit;
     // 摇取event_id
     while(1) {
-        // 根据ages里不同年龄的event组内摇取event_id
+        // 根据ages里不同月龄的event组内摇取event_id
         event_id = ages[age].event[(get_random_num_by_range(1, ages[age].event.length) - 1)];
         // console.log("event_id:" + event_id);
         if(age < 1 || age > 99) break;
@@ -242,7 +245,7 @@ function load_one_event() {
         
         // 判断生成的种族线是否匹配
         if(race == "yuansu" && the_race == 11) {
-            // 5年后元素线主线固定
+            // 5月后元素线主线固定
             if(age > 5) {
                 // 8默认为随机线，9为死亡线
                 if(main_element == the_unit || the_unit == 8 || the_unit == 9)
@@ -251,7 +254,7 @@ function load_one_event() {
                 break;
             }
         } else if(race == "qiuqiu" && the_race == 12) {
-            // 20年后元素线主线固定，40年特殊风属性觉醒
+            // 20月后元素线主线固定，40月特殊风属性觉醒
             if(age > 20) {
                 // 9为死亡线
                 if(main_element == the_unit || the_unit == 8 || the_unit == 9)
@@ -428,7 +431,7 @@ function over_and_regame(event_id) {
     else
         summary = "死因：" + events[event_id].event + "\n";
     summary = summary + "真是精彩的魔生~\n";
-    summary = summary + "你一共活了" + (age - 1) + "年\n";
+    summary = summary + "你一共活了" + (age - 1) + "月\n";
     summary = summary + "你的初始属性为：体质"+ init_prop1 + "，幸运"+init_prop2+"，智慧"+init_prop3+"\n";
     summary = summary + "你的最终属性为：体质"+ real_prop1 + "，幸运"+real_prop2+"，智慧"+real_prop3+"\n";
     summary = summary + "十分感谢您游玩本游戏~期待下一次相遇！";
