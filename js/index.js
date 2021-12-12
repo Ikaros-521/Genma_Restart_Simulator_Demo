@@ -401,13 +401,62 @@ function load_one_event() {
     $('#event_show_ul').append(li_content);
     // 保持滚动条一直处于底部
     document.getElementById('event_show_ul').scrollTop = document.getElementById('event_show_ul').scrollHeight;
-    age++;  
+    age++;
+
+    // 特殊时间跳跃事件
+    switch(event_id) {
+        case 114918:
+            // 生成 start<= x <end 的随机数
+            var num = get_random_num_by_range(-49, 10);
+            console.log("event=114918,num=" + num);
+            age += num;
+            break;
+        case 117418:
+            age = 1;
+            break;
+        case 120718:
+            age++;
+            break;
+        case 124918:
+            var num = get_random_num_by_range(-49, 10);
+            console.log("event=124918,num=" + num);
+            age += num;
+            break;
+        default:
+            // console.log(event_id);
+    }
 
     // 死亡事件处理
     for(var i = 0; i < die_event.length; i++)
     {
         if(event_id == die_event[i]) {
-            over_and_regame(event_id);
+            // 浮动死亡全属性扣点值
+            var num = 1;
+            if(10 >= age && age > 0) num = 1 * 2;
+            else if(20 >= age && age > 10) num = 3 * 2;
+            else if(40 >= age && age > 20) num = 5 * 2;
+            else if(50 >= age && age > 40) num = 8 * 2;
+            else if(70 >= age && age > 50) num = 15 * 2;
+            else if(99 >= age && age > 70) num = 50 * 2;
+            else num = 100 * 2;
+            // 所有属性点减1
+            real_prop1 -= num;
+            real_prop2 -= num;
+            real_prop3 -= num;
+            // 判断事件扣除后的属性点是否大于0，如果全属性都大于0，则可继续存活。
+            if(real_prop1 > 0 && real_prop2 > 0 && real_prop3 > 0) {
+                console.log("属性点抵消死亡事件。全属性-" + num);
+                age--;
+            } else {
+                // 死亡结算
+                over_and_regame(event_id);
+            }
+
+            // 现属性显示
+            document.getElementsByClassName("real_prop_class")[0].innerText = real_prop1;
+            document.getElementsByClassName("real_prop_class")[1].innerText = real_prop2;
+            document.getElementsByClassName("real_prop_class")[2].innerText = real_prop3;
+
             return;
         }
     }
@@ -437,3 +486,14 @@ function over_and_regame(event_id) {
     summary = summary + "十分感谢您游玩本游戏~期待下一次相遇！";
     $("#summary").text(summary);
 }
+
+// 回退1月
+function back_one() {
+    age--;
+}
+
+// 任意年龄跳转
+function jump_to_wantonly_age(wantonly_age) {
+    age = wantonly_age;
+}
+
