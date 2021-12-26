@@ -290,10 +290,25 @@ ul {
     line-height: 30px;
 }
 
+#regame_page_div #event_review {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    width: 200px;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 #regame_page_div #restart_game2 {
     position: absolute;
     bottom: 10%;
-    left: 150px;
+    right: 5%;
     width: 200px;
     margin: 10px;
     padding: 10px 20px 10px 20px;

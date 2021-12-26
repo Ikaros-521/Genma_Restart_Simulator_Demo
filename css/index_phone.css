@@ -306,18 +306,33 @@ ul {
     line-height: 30px;
 }
 
-#regame_page_div #restart_game2 {
+#regame_page_div #event_review {
     position: absolute;
     bottom: 10%;
-    left: 20%;
-    width: 200px;
+    left: 2%;
+    width: 40%;
     margin: 10px;
     padding: 10px 20px 10px 20px;
     background-color: #393E46;
     border: 1px #EEEEEE solid;
     border-radius: 3px;
     color: #EEEEEE;
-    font-size: 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#regame_page_div #restart_game2 {
+    position: absolute;
+    bottom: 10%;
+    right: 2%;
+    width: 40%;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 24px;
     cursor: pointer;
 }
 

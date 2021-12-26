@@ -83,6 +83,12 @@ function start_game_click() {
     $("#game_page_div").hide();
 }
 
+// 事件回顾
+function event_review() {
+    $("#zhezhao_div").hide();
+    $("#regame_page_div").hide();
+}
+
 // 重新开始点击触发
 function restart_game_click() {
     age = 0;
