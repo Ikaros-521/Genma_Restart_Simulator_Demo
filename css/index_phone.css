@@ -336,6 +336,28 @@ ul {
     cursor: pointer;
 }
 
+/* 提示 */
+#tip_div {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: #f192b2e8;
+    display: block;
+    text-align: center;
+    display: none;
+}
+
+#tip_div span {
+    font-size: 30px;
+    top: 30px;
+    position: relative;
+    color: #ffffffd4;
+    font-family: cursive;
+}
+
 #zhezhao_div {
     width: 100%;
     height: 100%;

@@ -227,6 +227,13 @@ function get_random_num_by_range(start, end) {
     return Math.floor(Math.random() * (end - start) + start);
 }
 
+// 显示隐藏tip_div 提示框 str为显示的字符串,time为显示时长
+function show_hide_tip(str, time) {
+    $("#tip_div").show(1000);
+    $("#tip_span").text(str);
+    setTimeout(function(){$("#tip_div").hide(1000);}, time);
+}
+
 // 加载一个事件
 function load_one_event() {
     var li_content = "";
@@ -449,6 +456,7 @@ function load_one_event() {
             real_prop1 -= num;
             real_prop2 -= num;
             real_prop3 -= num;
+            show_hide_tip("触发死亡事件！全属性减" + num, 4000);
             // 判断事件扣除后的属性点是否大于0，如果全属性都大于0，则可继续存活。
             if(real_prop1 > 0 && real_prop2 > 0 && real_prop3 > 0) {
                 console.log("属性点抵消死亡事件。全属性-" + num);
