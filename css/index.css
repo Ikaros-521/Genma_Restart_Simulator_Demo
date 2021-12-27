@@ -329,7 +329,6 @@ ul {
     top: 0;
     z-index: 1000;
     background-color: #f192b2e8;
-    display: block;
     text-align: center;
     display: none;
 }
@@ -340,7 +339,6 @@ ul {
     position: relative;
     color: #ffffffd4;
     font-family: cursive;
-    display: none;
 }
 
 /* 遮罩 */

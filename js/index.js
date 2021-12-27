@@ -78,6 +78,9 @@ function show_hide_game_explain_content(type) {
 
 // 开始游戏点击触发
 function start_game_click() {
+    // 解除屏蔽
+    $('#event_show_div').css("pointer-events","auto");
+    $('#auto_btn_div').css("pointer-events","auto");
     $("#home_page_div").hide();
     $("#prop_page_div").show();
     $("#game_page_div").hide();
@@ -85,12 +88,18 @@ function start_game_click() {
 
 // 事件回顾
 function event_review() {
+    // 将div内的所有标签的点击事件，input输入框的输入获焦等给屏蔽
+    $('#event_show_div').css("pointer-events","none");
+    $('#auto_btn_div').css("pointer-events","none");
     $("#zhezhao_div").hide();
     $("#regame_page_div").hide();
 }
 
 // 重新开始点击触发
 function restart_game_click() {
+    // 解除屏蔽
+    $('#event_show_div').css("pointer-events","auto");
+    $('#auto_btn_div').css("pointer-events","auto");
     age = 0;
     // 清空事件显示ul的所有li
     $("#event_show_ul").find("li").remove(); 
@@ -445,13 +454,13 @@ function load_one_event() {
         if(event_id == die_event[i]) {
             // 浮动死亡全属性扣点值
             var num = 1;
-            if(10 >= age && age > 0) num = 1 * 2;
-            else if(20 >= age && age > 10) num = 3 * 2;
-            else if(40 >= age && age > 20) num = 5 * 2;
-            else if(50 >= age && age > 40) num = 8 * 2;
-            else if(70 >= age && age > 50) num = 15 * 2;
-            else if(99 >= age && age > 70) num = 50 * 2;
-            else num = 100 * 2;
+            if(10 >= age && age > 0) num = 3;
+            else if(20 >= age && age > 10) num = 9;
+            else if(40 >= age && age > 20) num = 15;
+            else if(50 >= age && age > 40) num = 20;
+            else if(70 >= age && age > 50) num = 60;
+            else if(99 >= age && age > 70) num = 200;
+            else num = 400;
             // 所有属性点减1
             real_prop1 -= num;
             real_prop2 -= num;

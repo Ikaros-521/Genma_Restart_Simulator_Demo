@@ -276,7 +276,7 @@ ul {
 }
 
 #regame_page_div {
-    height: 60%;
+    height: 80%;
     width: 95%;
     border: 1px #ffffff solid;
     position: absolute;
@@ -308,11 +308,10 @@ ul {
 
 #regame_page_div #event_review {
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
     left: 2%;
     width: 40%;
-    margin: 10px;
-    padding: 10px 20px 10px 20px;
+    padding: 10px;
     background-color: #393E46;
     border: 1px #EEEEEE solid;
     border-radius: 3px;
@@ -323,11 +322,10 @@ ul {
 
 #regame_page_div #restart_game2 {
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
     right: 2%;
     width: 40%;
-    margin: 10px;
-    padding: 10px 20px 10px 20px;
+    padding: 10px;
     background-color: #393E46;
     border: 1px #EEEEEE solid;
     border-radius: 3px;
@@ -345,7 +343,6 @@ ul {
     top: 0;
     z-index: 1000;
     background-color: #f192b2e8;
-    display: block;
     text-align: center;
     display: none;
 }
