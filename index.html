@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <title>原魔重开模拟器</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
+    <script src="js/data.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <img id="header_img" src="img/背景色.png"/>
+    </div>
+    <div id="home_page_div">
+        <div id="home_page_title">
+            原魔重开模拟器
+        </div>
+        <div id="home_page_subtitle">
+            干翻原神，原魔永存~
+        </div>
+        <div id="home_page_btn_div">
+            <button id="start_game" onclick="start_game_click()">开始游戏</button>
+            <button id="game_explain" onclick="show_hide_game_explain_content('show')">游戏说明</button>
+            <div id="game_explain_content">
+                <span style="float: right; cursor: pointer;" onclick="show_hide_game_explain_content('hide')">X</span>
+                <br>
+                <span>本游戏原魔同人，参考《人生重开模拟器》，仿照着简单搓了个原魔重开模拟器。</span>
+                <br><br>
+                <span>玩法类似，通过初始属性加点，影响原魔的成长。目前设定只有3个属性，10个属性点。加点完成后开始游戏，便可以通过点击“事件框”或者点击“自动播放”按钮来进行事件触发。</span>
+                <br><br>
+                <span>游戏目前最大年限为100年，最终是否能进化为魔神，横扫提瓦特大陆，就看你的造化了~</span>
+            </div>
+        </div>
+    </div>
+    <div id="prop_page_div">
+        <div id="init_prop">
+            <span style="font-size: 40px;">调整初始属性</span>
+            <br>
+            <span style="font-size: 20px;">可用属性点：</span>
+            <span id="total_prop" style="font-size: 20px;">10</span>
+            <div id="prop_set_div">
+                <ul>
+                    <li>
+                        <span class="prop_name_class">体质</span>
+                        <span class="add_del_prop" onclick="set_prop('-', '体质')" readonly="readonly" style="cursor: pointer;">-</span>
+                        <span class="prop_class">0</span>
+                        <span class="add_del_prop" onclick="set_prop('+', '体质')" readonly="readonly" style="cursor: pointer;">+</span>
+                    </li>
+                    <li>
+                        <span class="prop_name_class">幸运</span>
+                        <span class="add_del_prop" onclick="set_prop('-', '幸运')" readonly="readonly" style="cursor: pointer;">-</span>
+                        <span class="prop_class">0</span>
+                        <span class="add_del_prop" onclick="set_prop('+', '幸运')" readonly="readonly" style="cursor: pointer;">+</span>
+                    </li>
+                    <li>
+                        <span class="prop_name_class">智慧</span>
+                        <span class="add_del_prop" onclick="set_prop('-', '智慧')" readonly="readonly" style="cursor: pointer;">-</span>
+                        <span class="prop_class">0</span>
+                        <span class="add_del_prop" onclick="set_prop('+', '智慧')" readonly="readonly" style="cursor: pointer;">+</span>
+                    </li>
+                </ul>
+            </div>
+            <button id="random_set_prop" onclick="random_set_prop_click()">
+                随机加点
+            </button>
+            <button id="start_new_life" onclick="start_new_life_click()">
+                开始新的人生
+            </button>
+        </div>
+    </div>
+    <div id="game_page_div">
+        <img id="restart_game" onclick="restart_game_click()" src="./img/重新开始.png"/>
+        <div id="prop_show_div">
+            <ul id="prop_show_ul">
+                <li>
+                    <span>体质</span>
+                    <span class="real_prop_class">0</span>
+                </li>
+                <li>
+                    <span>幸运</span>
+                    <span class="real_prop_class">0</span>
+                </li>
+                <li>
+                    <span>智慧</span>
+                    <span class="real_prop_class">0</span>
+                </li>
+            </ul>
+        </div>
+        <div id="event_show_div" onclick="load_one_event()">
+            <ul id="event_show_ul">
+
+            </ul>
+        </div>
+        <div id="auto_btn_div">
+            <button id="auto_btn" onclick="auto_play('1')">自动播放</button>
+            <button id="auto_btn2" onclick="auto_play('2')">播放   2x</button>
+        </div>
+    </div>
+    <div id="tip_div">
+        <span id="tip_span">tip:xxxxxxxx</span>
+    </div>
+    <div id="zhezhao_div">
+
+    </div>
+    <div id="regame_page_div">
+        <span id="summary_title">魔生总结</span>
+        <span id="summary">
+
+        </span>
+        <button id="event_review" onclick="event_review()">事件回顾</button>
+        <button id="restart_game2" onclick="restart_game_click()">重新开始</button>
+    </div>
+    <div id="footer">
+
+    </div>
+</body>
+
+</html>

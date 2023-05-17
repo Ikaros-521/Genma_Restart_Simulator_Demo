@@ -1,0 +1,368 @@
+body {
+    background-color: rgb(20, 23, 29);
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 首页 */
+#home_page_div {
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 30px;
+}
+
+#home_page_div #home_page_title {
+    margin-top: 10%;
+    font-size: 80px;
+}
+
+#home_page_div #home_page_subtitle {
+    font-size: 50px;
+}
+
+#home_page_div #home_page_btn_div {
+    margin-top: 10%;
+}
+
+#home_page_div #start_game {
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+#home_page_div #start_game:hover {
+    background: #f4a1de;
+    color: #fff;
+    transition: all .4s ease 0s;
+}
+
+#home_page_div #game_explain {
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+#home_page_div #game_explain:hover {
+    background: #f4a1de;
+    color: #fff;
+    transition: all .4s ease 0s;
+}
+
+#home_page_div #game_explain_content {
+    width: 80%;
+    height: 50%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    background-color: wheat;
+    font-size: 20px;
+    text-align: left;
+    color: black;
+    border-radius: 5px;
+    display: none;
+    padding: 10px;
+}
+
+#home_page_div #game_explain_content span {
+    margin: 10px;
+}
+
+/* 属性页 */
+#prop_page_div {
+    width: auto;
+    height: auto;
+    display: none;
+}
+
+#prop_page_div #init_prop {
+    text-align: center;
+}
+
+#prop_page_div #init_prop #prop_set_div {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+#prop_page_div #prop_set_div .add_del_prop {
+    font-size: 40px;
+}
+
+#prop_page_div #init_prop #prop_set_div li {
+    margin: 20px;
+}
+
+.prop_name_class {
+    width: 200px;
+    line-height: 20px;
+    margin-right: 50px;
+}
+
+.prop_class {
+    border: 1px #FFFFFF solid;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+#prop_page_div #random_set_prop {
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#prop_page_div #random_set_prop:hover {
+    background: #f4a1de;
+    color: #fff;
+    transition: all .4s ease 0s;
+}
+
+#prop_page_div #start_new_life {
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#prop_page_div #start_new_life:hover {
+    background: #f4a1de;
+    color: #fff;
+    transition: all .4s ease 0s;
+}
+
+/* 游戏页 */
+#game_page_div {
+    width: auto;
+    height: auto;
+    display: none;
+}
+
+#prop_show_ul {
+    list-style: none;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    color: #FFFFFF;
+    overflow: auto;
+    text-align: center;
+}
+
+#prop_show_ul li {
+    flex: 1;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 1px #ccc solid;
+    border-radius: 0.2rem;
+    font-size: 20px;
+}
+
+#prop_show_ul .real_prop_class {
+    background: #eee;
+    color: #666;
+}
+
+#game_page_div #restart_game {
+    margin: 10px;
+    padding: 10px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    cursor: pointer;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    width: 30px;
+    height: 30px;
+}
+
+#game_page_div #restart_game:hover {
+    background: #f4a1de;
+    color: #fff;
+    transition: all .4s ease 0s;
+}
+
+#game_page_div #event_show_div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#game_page_div #event_show_div #event_show_ul {
+    flex: 1;
+    margin: 0.5rem 1rem;
+    padding: 0;
+    border: 1px #9b9b9b solid;
+    background-color: #393E46;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+#game_page_div #event_show_div #event_show_ul li {
+    margin: 10px 0;
+    padding: 5px 10px;
+    display: flex;
+    background-color: #4a5361;
+    box-shadow: #EEEEEE 0 0 0.4rem;
+    color: #EEEEEE;
+    font-size: 1rem;
+    position: relative;
+    text-align: left;
+}
+
+#auto_btn_div {
+    margin: 20px 100px 20px 100px;
+}
+
+#auto_btn_div #auto_btn {
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#auto_btn_div #auto_btn2 {
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#regame_page_div {
+    height: 500px;
+    width: 500px;
+    border: 1px #ffffff solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: blanchedalmond;
+    z-index: 999;
+    display: none;
+    border-radius: 5px;
+    color: black;
+}
+
+#regame_page_div #summary_title {
+    font-size: 30px; 
+    position: absolute; 
+    top: 5%; 
+    left: 170px;
+}
+
+#regame_page_div #summary {
+    position: absolute;
+    top: 100px;
+    margin: 0px 50px 0px 50px;
+    white-space: pre-wrap;
+    line-height: 30px;
+}
+
+#regame_page_div #event_review {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    width: 200px;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#regame_page_div #restart_game2 {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 200px;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #393E46;
+    border: 1px #EEEEEE solid;
+    border-radius: 3px;
+    color: #EEEEEE;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* 提示 */
+#tip_div {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: #f192b2e8;
+    text-align: center;
+    display: none;
+}
+
+#tip_div span {
+    font-size: 30px;
+    top: 30px;
+    position: relative;
+    color: #ffffffd4;
+    font-family: cursive;
+}
+
+/* 遮罩 */
+#zhezhao_div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    background-color: #000;
+    opacity: 0.6;
+    display: none;
+}
+
+#header {
+    height: 15%;
+    text-align: center;
+}
+
+img#header_img {
+    height: 100%;
+}
+
+#footer {
+    height: 100px;
+}
