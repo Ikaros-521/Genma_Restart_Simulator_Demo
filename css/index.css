@@ -81,6 +81,19 @@ ul {
     margin: 10px;
 }
 
+#home_page_div #game_explain_content_show_hide_span {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: #14171d;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0 0 5px black;
+    box-shadow: 0 0 10px black;
+    transition: transform 0.3s;
+}
+
 /* 属性页 */
 #prop_page_div {
     width: auto;
